@@ -40,7 +40,7 @@ export class AppController {
    * @param {string} path - The URL of the file to delete.
    * @returns {Promise<{message: string}>} A message indicating the file was deleted.
    */
-  @Delete(':id')
+  @Delete('path')
   async deleteFile(@Body('path') path: string): Promise<{ message: string }> {
     await this.awsS3Service.deleteFile(path);
     return { message: 'File deleted successfully' };
@@ -52,7 +52,7 @@ export class AppController {
    * @param {string} path - The URL of the file to replace.
    * @returns {Promise<{url: string}>} The URL of the uploaded file.
    */
-  @Put(':id')
+  @Put('path')
   @UseInterceptors(FileInterceptor('file'))
   async updateFile(
     @UploadedFile() file: Express.Multer.File,
