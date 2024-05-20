@@ -28,10 +28,6 @@ To run the application:
 - DELETE `/file/:id`: Delete a file from AWS S3.
 - PUT `/file/:id`: Update a file in AWS S3.
 
-## Contributing
-
-If you want to contribute to this project, please send a pull request.
-
 ## License
 
 This project is licensed under the MIT License.
